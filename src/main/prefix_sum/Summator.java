@@ -18,16 +18,13 @@ public class Summator implements Runnable{
         this.start = start;
         this.end = end;
         this.step1 = step1;
-        System.out.println("threds was creates");
     }
     @Override
     public void run() {
-        System.out.println("threads was started");
         for (int i = start+step1; i < end; i+= 2*step){
             Integer result =  new Integer(array.get(i).intValue() + array.get(i+step).intValue());
             array.set(i+step, result);
         }
-        System.out.println("threads was finished");
     }
 
 }
